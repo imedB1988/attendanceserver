@@ -1,5 +1,6 @@
 package com.attendanceserver.entities;
 
+import com.attendanceserver.DTO.UserDTO;
 import com.attendanceserver.enums.UserRole;
 
 import jakarta.persistence.Entity;
@@ -20,5 +21,17 @@ private String password;
 private String name;
 
 private UserRole userRole;
+
+public UserDTO getUserDTO()
+{
+    UserDTO userdto = new UserDTO();
+    userdto.setId(id);
+    userdto.setName(name);
+    userdto.setPassword(password);
+    userdto.setEmail(email);
+    userdto.setUserRole(userRole);
+
+    return userdto;
+}
 
 }

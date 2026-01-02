@@ -1,5 +1,7 @@
 package com.attendanceserver.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,6 +12,7 @@ import com.attendanceserver.enums.UserRole;
 public interface UserRepository extends JpaRepository<User, Long>{
 
     User findByUserRole(UserRole role);
+    Optional<User> findByEmail(String email);
 
   
 
